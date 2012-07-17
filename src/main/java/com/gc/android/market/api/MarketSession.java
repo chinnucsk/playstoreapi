@@ -1,5 +1,6 @@
 package com.gc.android.market.api;
 
+import android.util.*;
 import com.gc.android.market.api.model.Market.*;
 import com.gc.android.market.api.model.Market.Request.*;
 import com.gc.android.market.api.model.Market.Response.*;
@@ -315,8 +316,7 @@ public class MarketSession {
             cnx.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             cnx.setRequestProperty("Accept-Charset", "ISO-8859-1,utf-8;q=0.7,*;q=0.7");
 
-            String request64 = Base64.encodeBytes(request, Base64.URL_SAFE);
-
+            String request64 = Base64.encodeToString(request, Base64.URL_SAFE);
             String requestData = "version=" + PROTOCOL_VERSION + "&request=" + request64;
 
 
@@ -395,7 +395,7 @@ public class MarketSession {
             cnx.setRequestProperty("User-Agent", "Android-Market/2 (sapphire PLAT-RC33); gzip");
             cnx.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             cnx.setRequestProperty("Accept-Charset", "ISO-8859-1,utf-8;q=0.7,*;q=0.7");
-            String request64 = Base64.encodeBytes(request, Base64.URL_SAFE);
+            String request64 = Base64.encodeToString(request, Base64.URL_SAFE);
             String requestData = "version=" + PROTOCOL_VERSION + "&request=" + request64;
             cnx.setFixedLengthStreamingMode(requestData.getBytes("UTF-8").length);
             OutputStream os = cnx.getOutputStream();
