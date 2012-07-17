@@ -6,7 +6,7 @@
 
     <groupId>com.github.pbuda</groupId>
     <artifactId>playstoreapi</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.0-SNAPSHOT</version>
 
     <properties>
         <android.version>2.3.3</android.version>
