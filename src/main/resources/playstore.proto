@@ -6,7 +6,13 @@ message MultipleDetailsRequest {
 }
 
 message MultipleDetailsResponse {
+    repeated AssetEntry assets = 1;
+}
+
+message AssetEntry {
     required Asset asset = 1;
 }
 
-message Asset {}
+message Asset {
+    required string assetId = 1;
+}
