@@ -1,0 +1,12 @@
+option java_package = "com.github.pbuda.playstoreapi.mode";
+option java_outer_classname = "PlayStoreProtos";
+
+message MultipleDetailsRequest {
+    repeated string assetId = 1;
+}
+
+message MultipleDetailsResponse {
+    required Asset asset = 1;
+}
+
+message Asset {}
